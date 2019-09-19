@@ -3,7 +3,7 @@ Remember to **document your work** in this `README.md` file! Feel free to delete
 
 ## Installation
 1. Fork + clone this repository. 
-2. Change directory into the cloned repository.
+2. `cd` into the cloned repository.
 3. Install `pipenv`
   * `brew install pipenv` if you're on a Mac.
   * `pip install --user --upgrade pipenv` for most other machines.
