@@ -54,7 +54,7 @@ def get_club_name(club):
     """
     Returns the string of the name of a club, when given a soup containing the data for a single club.
 
-    We've implemented this method for you to demonstrate how to use the functions provided.
+    We've implemented this function for you to demonstrate how to use the provided utility functions.
     """
     elts = get_elements_with_class(club, 'strong', 'club-name')
     if len(elts) < 1:
