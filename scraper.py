@@ -45,7 +45,7 @@ def get_elements_with_class(soup, elt, cls):
 
 def get_clubs(soup):
     """
-    This function should return a list of soups which each correspond to the html
+    This function should return a list of soups with each soup corresponding to the html
     for a single club.
     """
     return [] # TODO: Implement this function
@@ -63,7 +63,7 @@ def get_club_name(club):
 
 def get_club_description(club):
     """
-    Extract club description from a soup of 
+    Extract club description from a soup containing a single club.
     """
     return '' # TODO: Implement this function
 
