@@ -5,7 +5,11 @@ class User():
         self.email = email
         self.username = username
         self.password_hash = generate_password_hash(password)
-        self.fav_club = []
+        self.fav_clubs= []
+
+    def add_fav_club(self, club):
+        if (club not in self.fav_clubs):
+            self.fav_clubs.append(club)
 
     @staticmethod
     def validate_login(password_hash, password):
