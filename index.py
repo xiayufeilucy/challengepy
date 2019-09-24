@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, flash, jsonify, render_template, redirect
 from scraper import * # Web Scraping utility functions for Online Clubs with Penn.\
 from flask_wtf import FlaskForm
 from wtforms import FloatField, SubmitField, StringField, PasswordField, BooleanField
@@ -85,9 +85,11 @@ def login():
             return "This user doesn't exit! Please register first!"
         else:
             if (user.validate_login(user.password_hash, password)):
-                return "You've successfully logged in!"
+                flash("You've successfully logged in!")
+                return redirect("/dashboard")
             else:
-                return "Username or password is incorrect"
+                flash("Username or password is incorrect")
+                return render_template("login.html", form=form)
 
     else:
         return render_template("login.html", form = form)
@@ -103,7 +105,9 @@ def register():
         email = request.form['email']
         new_user = User(username= username, email= email, password= password)
         users[username] = new_user
-        return "You've successfully registered!"
+        if (new_user is not None):
+            flash("You've successfully registered!")
+        return render_template('register.html', form = form)
 
     else:
         return render_template('register.html', form = form)

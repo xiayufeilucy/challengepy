@@ -52,7 +52,7 @@ the web will return "Username or password is incorrect".
 `Example user: Jennifer - username: jen password: pennlabs2019!`
 
 2. Register: The route for register is `/register`. It passes a Flaskform to the frontend which allows users to type in their username, email and password. The web will create a new User object and store in 
-the database after the user successfulLy registered.
+the database after the user successfulLy registered. The user will be redirected to the login page after they finish registering.
 
 
 
